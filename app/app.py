@@ -31,7 +31,7 @@ class registros(Base):
 
 registros.metadata.create_all(engine)
 
-# Cargar clasificador
+# Load classifier
 model = joblib.load(r'model.pkl')
 
 @app.route("/")
