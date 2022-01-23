@@ -1,0 +1,37 @@
+version: '3.5'
+services:
+  database:
+    container_name: postgres-test
+    image: postgres:latest
+    environment:
+      POSTGRES_USER : postgres
+      POSTGRES_PASSWORD : 1234
+      POSTGRES_DB : postgres
+
+    ports:
+      - 5432:5432
+
+    restart: always
+
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+
+  flask:
+    build:
+      context: .
+      dockerfile: dockerfile
+    environment:  # or use env_file as you did above
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_HOST: database     # This is the name of the database service in this file above
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: postgres
+    depends_on:
+      - database
+    ports:
+      - 5000:5000
+
+
+volumes:
+  postgresdata:
+
