@@ -14,7 +14,7 @@ services:
     restart: always
 
     volumes:
-      - postgresdata:/var/lib/postgresql/data
+      - ./postgresdata:/var/lib/postgresql/data
 
   flask:
     build:
