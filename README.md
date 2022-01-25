@@ -55,8 +55,8 @@ When we recive a no error answer from postman, it is time to check that our data
 To do so we are going to check the table where we are storing the data inside of our container.
 
 To get "inside" our postgres container run the following command:
-`docker exec -it [CONTAINED_ID] bash`
-To enter de postgres console run the following commands:
+`docker exec -it [CONTAINER_ID] bash`
+To enter the postgres console run the following commands:
 `su postgres`,
 `psql`
 Now  with the following command we connect to the database named postgres where we have our table
