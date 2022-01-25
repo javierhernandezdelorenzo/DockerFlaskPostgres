@@ -58,7 +58,7 @@ To remove container:
 Now that we checked that everything works independently we only have to run the docker-compose.yml file.
 The docker-compose file is usefull to run containers that need a lot of variables to be specified. It also allows us to run containers in an organized way.
 
-To set up this service run the docker-compose file we simply have to type this command:
+To set up this service run the docker-compose by simply typing this command:
 `docker-compose up`
 
 Or we can run the sh file by running the command:
@@ -84,12 +84,12 @@ The input JSON is the following:
 ]
 ```
 
-When we recive a no error answer from postman, it is time to check that our database is storing the values correctly.
+When we receive a no error answer from postman, it is time to check that our database is storing the values correctly.
 To do so we are going to check the table where we are storing the data inside of our container.
 
 To get "inside" our postgres container run the following command:
 
-`docker exec -it [CONTAINER_ID] bash`
+`docker exec -it [POSTGRES_CONTAINER_ID] bash`
 
 To enter the postgres console run the following commands:
 
