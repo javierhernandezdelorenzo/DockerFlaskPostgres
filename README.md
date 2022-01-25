@@ -51,6 +51,18 @@ This POST request should return a prediction and this prediction should be store
 Your Postman should look like this:
 ![img.png](img.png)
 
+The input JSON is the following:
+```
+[
+    {
+        "sepal_length":20,
+        "sepal_width": 1,
+        "petal_length": 37,
+        "petal_width": 5
+    }
+]
+```
+
 When we recive a no error answer from postman, it is time to check that our database is storing the values correctly.
 To do so we are going to check the table where we are storing the data inside of our container.
 
