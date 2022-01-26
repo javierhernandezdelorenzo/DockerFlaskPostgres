@@ -10,47 +10,17 @@ Install docker: https://docs.docker.com/engine/install/
 Install python: https://www.python.org/downloads/
 
 Install postman:https://www.postman.com/downloads/
-## Flask 
-
-Check that flask image is working, build the image with the following command:
-
-`docker build -t name_of_the_image .`
-
-Don't run the container, it will throw an error message because it depends on a database that is not up and running.
 
 ## Postgres
 
-Check postgres image is working.
 
-In this case, we can run the container of the database because it doesn't deppend on the application.
 
 Before running the container create the folder where we will store the data collected by flask.
 In your project directory run the following command:
 
 `mkdir postgresdata`
 
-Now we can run the postgres container to see that it works. Use the following command:
 
-`docker run -v ./postgresdata:/var/lib/postgresql/data -p 5432:5432 -e POSTGRES_PASSWORD=1234 -d postgres`
-
-Once we checked everything works independently we can remove the image of flask and the container of postgres.
-
-To see created images: 
-
-`docker images`
-
-We can only remove images that are not in use. If we want to remove an image that is in use, first we will have to remove the container that is using the image. After doing that the image can be removed.
-To remove image:
-
-`docker image rm [IMAGE..]`
-
-To see running container:
-
-`docker ps`
-
-To remove container:
-
-`docker rm [CONTAINER..]`
 
 
 ## docker-compose
@@ -71,6 +41,8 @@ This POST request should return a prediction and this prediction should be store
 
 Your Postman should look like this:
 ![img.png](img.png)
+
+URL: `localhost:5000/predict`
 
 The input JSON is the following:
 ```
